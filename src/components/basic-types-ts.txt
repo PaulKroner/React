@@ -1,0 +1,60 @@
+import React from 'react';
+import App from '../App';
+// basic Types in Typescript
+
+let thing: any;
+let nameP: string;
+let age: number;
+let isStudent: boolean;
+let hobbies: string[];
+let personName: unknown;
+let role:[number, string];
+role=[6, "hi"];
+
+let ageP: number | string;
+
+//Objects
+type Person = {
+  nameP: string;
+  age?: number; //?=optional
+}
+
+let person: Person = {
+  nameP: "Paul",
+  age: 22,
+}
+// Array of Person Object
+let lotsOfPeople: Person[];
+
+// Function
+
+function printName(nameP: string) {
+    console.log(nameP);
+}
+
+printName("Paul");
+
+let printPerson: Function;
+
+let printXX: (name: string) => void; // wird vielleicht was zurückgeben
+                                    // void oder auch number, string...
+
+let printXY: (name: string) => never; //wird nie etwas zurückgeben
+
+// interface
+
+interface car {
+    name: string;
+}
+
+interface comp extends car {
+    com: string;
+}
+
+type X = {
+    a: string;
+}
+
+type Y = X & { //Y hat nun auch a von type X
+    b: number;
+}
